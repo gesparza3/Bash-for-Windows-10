@@ -1,0 +1,113 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{graphicx}
+
+\title{Python Installation for Windows 10}
+\author{Grant Esparza}
+	
+\begin{document}
+	
+	\section*{Getting Ready}
+	
+		In order to install the bash shell command-line tool, you must have the \textbf{Windows 10 Creators Update} installed.  In order to check if your PC meets the requirements:
+			
+			\begin{enumerate}
+				
+				\item Open \textbf{Settings}.
+				
+				\item Click on \textbf{System}.
+				
+				\item Click on \textbf{About}.
+				
+			\end{enumerate} 
+		Under version, you must have at least version \textbf{1703}.  If not, you must update your PC.
+		
+	\section*{Installing Bash shell command-line tool for Windows 10}
+	
+		\begin{enumerate}
+			
+			\item Open \textbf{Settings.}
+			
+			\item Click on \textbf{Update \& security.}
+
+			\item Click on \textbf{For Developers.}
+
+			\item Under "Use developer features", select the Developer mode option to setup the environment to install Bash.		
+			
+			\item After all the components are installed, you will need to restart your computer.
+		
+			\item Next, open the \textbf{Control Panel.}
+			
+			\item Click on \textbf{Programs.}
+			
+			\item Select \textbf{Turn Windows features on or off.}
+			
+			\item Scroll down in the popup window and check the box for \textbf{Windows Subsystem for Linux(Beta)}.  
+				
+				\begin{itemize}
+					\item \textit{On more recent versions of Windows, this feature is no longer beta.}
+				\end{itemize}
+						
+			\item More components will install on your computer, after which select the popup \textbf{Restart Now.}
+			
+			\item After reboot, click \textbf{Start} and search for \textbf{\textit{bash.exe}}.  Press enter or click to open the bash window.
+			
+			\item The command prompt will then open.  Press 'y' to install bash.  You will then be prompted to create a UNIX account.  \textbf{Remember this info!} 			
+				
+				\begin{itemize}
+					
+					\item \textit{If your \textbf{Windows Subsystem for Linux} was not marked as beta, you will receive the following message:}	
+										
+						\textbf{\textit{Windows subsystem for Linux has no installed distributions. Distributions can be installed by visiting the Windows Store: https://aka.ms/wslstore	}}					
+					
+					Open the \textbf{Windows Store}. Search for and install \textbf{Ubuntu.} Repeat step 11. 
+		
+				\end{itemize}
+		
+		\end{enumerate}
+		
+	\section*{Using the Bash shell}
+	
+		\begin{itemize}				
+				
+			\item To access the bash shell tool, simply open a command prompt and type
+			\textbf{bash}.  While it isn't designed to run Linux graphical applications, most
+			UNIX commands will work letting you run programs in a Linux environment without
+			the overhead of a virtual machine.  
+			
+			\item The tool's home directory is placed where it was installed so I would recommend
+			adding an alias called \textbf{home} to making navigate through your directory
+			eaiser.  To do so, use the command \textbf{vim \~/.bashrc} and add this line to
+			the end of the file:
+		
+				\begin{verbatim}
+					alias home="cd /mnt/c/Users/[Your Windows Username]"
+				\end{verbatim}
+		
+			\item From now on you can simply type "\textbf{home}" on the command-line to be
+			redirected to your home directory				
+				
+		\end{itemize}
+					
+	\section*{Installing Python}
+				
+		\begin{itemize}
+			
+			\item Check to see if python3 is already installed using:
+				
+				\begin{verbatim}
+					python3 --version
+				\end{verbatim}			
+			
+			\item If it is, great! Else, use the command:
+					
+					\begin{verbatim}
+						sudo apt-get install python3
+					\end{verbatim}		
+			
+		\end{itemize}
+		
+	Your should have everything you need to get started.		
+			
+	\end{document}
